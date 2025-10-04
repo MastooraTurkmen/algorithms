@@ -14,3 +14,15 @@ function logAtMost5(n) {
 }
 
 logAtMost5(12)
+
+
+
+// Arrays
+
+let names = ["Micheal", "Melissa", "Andrea"]
+
+// Big O of Arrays
+// Insertion - It depends... 
+// Removal - It depends...
+// Searching - O(n)
+// Access - O(1)
