@@ -132,3 +132,34 @@ function charCountThree(str) {
 }
 
 console.log(charCountThree("hello Hi"))
+
+
+// charCode
+
+function isAlphaNumeric(char) {
+    let code;
+    for (let i = 0; i < char.length; i++) {
+
+        code = char.charCodeAt(0)
+        if (
+            !(code > 47 && code < 58) && // numeric (0-9)
+            !(code > 64 && code < 91) && // upper alpha (A-Z)
+            !(code > 96 && code < 123) // lower alpha (a-z)
+        ) {
+            return false
+        }
+    }
+    return true
+}
+
+isAlphaNumeric("a") // true
+
+
+
+// regex
+
+function isAlphaNumeric2(char) {
+    return /[a-z0-9]/i.test(char)
+}
+
+isAlphaNumeric2("a") // true
