@@ -134,6 +134,22 @@ function charCountThree(str) {
 console.log(charCountThree("hello Hi"))
 
 
+// Third Solution Refactor
+function charCountRefactor(str) {
+    let obj = {}
+
+    for (let char of str) {
+        if (isAlphaNumeric(char)) {
+            obj[char] = ++obj[char] || 1
+        }
+    }
+    return obj
+}
+
+console.log(charCountRefactor("hello Hi"))
+
+
+
 // charCode
 
 function isAlphaNumeric(char) {
