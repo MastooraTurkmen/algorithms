@@ -22,3 +22,13 @@ function reverseString(str) {
 
     return reversedString; // Return the reversed string
 }
+
+
+// Step 4: Refactor
+function reverseStringRefactored(str) {
+    return str.split('').reverse().join('');
+}
+
+// Example usage:
+console.log(reverseStringRefactored("hello")); // Output: "olleh"
+console.log(reverseStringRefactored("JavaScript")); // Output: "tpircSavaJ"
