@@ -66,3 +66,54 @@ findUser(userData)
 
 // if this findUser(userData) is called multiple times,
 // then it will be optimized (inline cached) to just be 'found Brittney Postma'
+
+
+
+/*
+Hidden Classes
+*/
+
+
+function Animal(x, y) {
+    this.x = x;
+    this.y = y;
+}
+
+const obj1 = new Animal(1, 2);
+const obj2 = new Animal(3, 4);
+
+obj1.a = 30;
+obj1.b = 100;
+obj2.b = 30;
+obj2.a = 100;
+
+delete obj1.x;
+
+
+
+// Memory Heap
+
+// tell the memory heap to allocate memory for a number
+const number = 11;
+// allocate memory for a string
+const string = "some text";
+// allocate memory for an object and it's values
+const person = {
+    first: "Brittney",
+    last: "Postma"
+};
+
+
+
+// Call Stack
+
+function subtractTwo(num) {
+    return num - 2;
+}
+
+function calculate() {
+    const sumTotal = 4 + 5;
+    return subtractTwo(sumTotal);
+}
+debugger;
+calculate();
