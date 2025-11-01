@@ -55,3 +55,39 @@ typeof new String("abc") === "object";
 typeof function () { } === "function";
 typeof class C { } === "function";
 typeof Math.sin === "function";
+
+
+// Primitive vs Non Primitive Types
+
+
+// objects are passed by reference
+let obj = {
+    name: "object 1"
+};
+let newObj = obj; // points to same place in memory as obj
+newObj.name = "newObj"; // modifies the memory
+// Since both point to the same place...
+console.log(obj); // {name: newObj}
+console.log(newObj); // {name: newObj}
+// They are both modified.
+
+let arr = [1, 2, 3];
+let newArr = arr;
+newArr.push(4);
+console.log(arr); // [1, 2, 3, 4]
+console.log(newArr); // [1, 2, 3, 4]
+
+
+const originalObj = {
+    nested: {
+        nestedKey: "nestedValue"
+    },
+    key: "value"
+};
+// originalObj points to location 1 in memory
+const assignObj = originalObj;
+// assignObj will point to 1 in memory
+const shallowObj = { ...originalObj };
+// shallowObj points to a new location 2, but references location 1 for the nested object
+const deepObj = JSON.parse(JSON.stringify(originalObj));
+// deepObj clones all parts of the object to a new memory address
