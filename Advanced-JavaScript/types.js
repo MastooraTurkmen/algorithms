@@ -91,3 +91,38 @@ const shallowObj = { ...originalObj };
 // shallowObj points to a new location 2, but references location 1 for the nested object
 const deepObj = JSON.parse(JSON.stringify(originalObj));
 // deepObj clones all parts of the object to a new memory address
+
+
+// Function Constructor
+
+(function () { }.contructor === Function);
+// true
+
+// function constructor
+new Function("optionalArguments", "functionBody");
+
+const four = new Function("return four"); // 4
+const sum = new Function("x", "y", "return x + y");
+console.log(sum(2, 3)); // 5
+
+// examples of constructor functions in JavaScript
+const five = new Number(5);
+const assignFive = 5;
+
+// this is different than using regular assignment
+const newString = new String(`I am a new string`);
+const assignString = `I am an assigned string`;
+
+typeof five; // object
+typeof assignFive; // number
+typeof newString; //object
+typeof assignString; // string
+
+five === assignFive; // false
+five == assignFive; // true - types are coerced
+
+// Notice how the types are different
+// depending on how they are created.
+
+// Arrays, Booleans, Dates, Objects, and Strings
+// can be created this way as well.
