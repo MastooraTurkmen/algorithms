@@ -91,3 +91,9 @@ function sameRefactor(arr1, arr2) {
 
     return true;
 }
+
+
+// Example usage:
+console.log(sameRefactor([1, 2, 3, 2], [9, 4, 1, 4,])) // true
+console.log(sameRefactor([1, 2, 3], [1, 9])) // false
+console.log(sameRefactor([1, 2, 1], [4, 4, 1])) // false
