@@ -97,3 +97,32 @@ function sameRefactor(arr1, arr2) {
 console.log(sameRefactor([1, 2, 3, 2], [9, 4, 1, 4,])) // true
 console.log(sameRefactor([1, 2, 3], [1, 9])) // false
 console.log(sameRefactor([1, 2, 1], [4, 4, 1])) // false
+
+
+// Example: Anagram problem
+function validAnagram(str1, str2) {
+    if (str1.length !== str2.length) {
+        return false;
+    }
+
+    const frequencyCounter = {}
+
+    for (let char of str1) {
+        frequencyCounter[char] = (frequencyCounter[char] || 0) + 1
+    }
+
+    for (let char of str2) {
+        if (!frequencyCounter[char]) {
+            return false
+        } else {
+            frequencyCounter[char] -= 1
+        }
+    }
+
+    return true;
+}
+
+// Example usage:
+console.log(validAnagram('cinema', 'iceman')) // true
+console.log(validAnagram('hello', 'billion')) // false
+console.log(validAnagram('anagram', 'nagaram')) // true
