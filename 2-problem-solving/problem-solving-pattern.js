@@ -150,3 +150,68 @@ function sumZero(arr) {
 console.log(sumZero([-3, -2, -1, 0, 1, 2, 3])) // [-3, 3]
 console.log(sumZero([-2, 0, 1, 3])) // undefined
 console.log(sumZero([1, 2, 3])) // undefined
+
+
+// Example: Character Count problem
+// First Solution
+function charCount(str) {
+    let object = {}
+
+    for (let i = 0; i < str.length; i++) {
+        const char = str[i].toLowerCase()
+
+        if (char >= 'a' && char <= 'z' || char >= '0' && char <= '9') {
+            if (object[char] > 0) {
+                object[char]++
+            } else {
+                object[char] = 1
+            }
+        }
+    }
+
+    return object
+}
+
+console.log(charCount("hello Hi"))
+
+
+
+// First Solution using charCodeAt
+function charCountCharCode(str) {
+    let object = {}
+
+    for (let i = 0; i < str.length; i++) {
+        const char = str[i].toLowerCase()
+        const code = char.charCodeAt(0)
+
+        if ((code >= 97 && code <= 122) || (code >= 48 && code <= 57)) {
+            if (object[char] > 0) {
+                object[char]++
+            } else {
+                object[char] = 1
+            }
+        }
+    }
+
+    return object
+}
+
+console.log(charCountCharCode("hello Hi"))
+
+
+// Second Solution
+
+function charCount2(str) {
+    let object = {}
+    for (let i = 0; i < str.length; i++) {
+        const char = str[i].toLowerCase()
+        if (/[a-z0-9]/.test(char)) {
+            if (object[char] > 0) {
+                object[char]++
+            } else {
+                object[char] = 1
+            }
+        }
+    }
+    return object
+}
