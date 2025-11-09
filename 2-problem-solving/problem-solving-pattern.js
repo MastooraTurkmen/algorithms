@@ -215,3 +215,29 @@ function charCount2(str) {
     }
     return object
 }
+
+
+
+// Example usage:
+console.log(charCount2("hello Hi! 123")) // { h: 2, e: 1, l: 2, o: 1, i: 1, 1: 1, 2: 1, 3: 1 }
+
+
+// Refactored Solution
+function charCountRefactored(str) {
+    let object = {}
+    for (let char of str) {
+        char = char.toLowerCase()
+        if (isAlphaNumeric(char)) {
+            object[char] = ++object[char] || 1
+        }
+    }
+    return object
+}
+
+function isAlphaNumeric(char) {
+    const code = char.charCodeAt(0)
+    return (code >= 97 && code <= 122) || (code >= 48 && code <= 57)
+}
+
+// Example usage:
+console.log(charCountRefactored("hello Hi! 123")) // { h: 2, e: 1, l: 2, o: 1, i: 1, 1: 1, 2: 1, 3: 1 }
