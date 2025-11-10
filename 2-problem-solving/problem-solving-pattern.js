@@ -241,3 +241,33 @@ function isAlphaNumeric(char) {
 
 // Example usage:
 console.log(charCountRefactored("hello Hi! 123")) // { h: 2, e: 1, l: 2, o: 1, i: 1, 1: 1, 2: 1, 3: 1 }
+
+
+
+
+
+// Example: Fibonacci problem
+function fibonacci(n) {
+    if (n <= 2) return 1;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+// Example usage:
+console.log(fibonacci(6)); // Output: 8
+console.log(fibonacci(10)); // Output: 55
+console.log(fibonacci(20)); // Output: 6765
+
+
+
+// Refactored Fibonacci using Memoization
+function fibonacciMemo(n, memo = {}) {
+    if (n in memo) return memo[n];
+    if (n <= 2) return 1;
+    memo[n] = fibonacciMemo(n - 1, memo) + fibonacciMemo(n - 2, memo);
+    return memo[n];
+}
+
+// Example usage:
+console.log(fibonacciMemo(6)); // Output: 8
+console.log(fibonacciMemo(10)); // Output: 55
+console.log(fibonacciMemo(50)); // Output: 12586269025
