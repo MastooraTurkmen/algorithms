@@ -271,3 +271,63 @@ function fibonacciMemo(n, memo = {}) {
 console.log(fibonacciMemo(6)); // Output: 8
 console.log(fibonacciMemo(10)); // Output: 55
 console.log(fibonacciMemo(50)); // Output: 12586269025
+
+
+
+// Example: Fibonacci using Tabulation
+function fibonacciTab(n) {
+    if (n <= 2) return 1;
+    const table = new Array(n + 1).fill(0);
+    table[1] = 1;
+    table[2] = 1;
+
+    for (let i = 3; i <= n; i++) {
+        table[i] = table[i - 1] + table[i - 2];
+    }
+
+    return table[n];
+}
+
+// Example usage:
+console.log(fibonacciTab(6)); // Output: 8
+console.log(fibonacciTab(10)); // Output: 55
+console.log(fibonacciTab(50)); // Output: 12586269025
+
+
+// Refactored Fibonacci Tabulation - Space Optimized
+function fibonacciTabOptimized(n) {
+    if (n <= 2) return 1;
+    let a = 1, b = 1, temp;
+
+    for (let i = 3; i <= n; i++) {
+        temp = a + b;
+        a = b;
+        b = temp;
+    }
+
+    return b;
+}
+
+// Example usage:
+console.log(fibonacciTabOptimized(6)); // Output: 8
+console.log(fibonacciTabOptimized(10)); // Output: 55
+console.log(fibonacciTabOptimized(50)); // Output: 12586269025
+
+
+// --- IGNORE ---
+module.exports = {
+    reverseString,
+    reverseStringRefactored,
+    same,
+    sameRefactor,
+    validAnagram,
+    sumZero,
+    charCount,
+    charCountCharCode,
+    charCount2,
+    charCountRefactored,
+    fibonacci,
+    fibonacciMemo,
+    fibonacciTab,
+    fibonacciTabOptimized
+};
