@@ -54,3 +54,28 @@ newArray.push("hi");
 // MyArray { length: 1, data: { 0: 'hi'}}
 newArray.pop();
 // MyArray { length: 0, data: { }}
+
+
+
+// Problem Solving Pattern
+// Frequency Counter Pattern
+
+// Naive solution - Time Complexity O(n^2)
+function same(arrayOne, arrayTwo) {
+    if (arrayOne.length !== arrayTwo.length) {
+        return false;
+    }
+
+    for (let i = 0; i < arrayOne.length; i++) {
+        let correctIndex = arrayTwo.indexOf(arrayOne[i] ** 2)
+        if (correctIndex === -1) {
+            return false
+        }
+        arrayTwo.splice(correctIndex, 1)
+    }
+    return true;
+}
+
+console.log(same([1, 2, 3, 2], [9, 4, 1, 4,])) // true
+console.log(same([1, 2, 3], [1, 9])) // false
+console.log(same([1, 2, 1], [4, 4, 1])) // false
