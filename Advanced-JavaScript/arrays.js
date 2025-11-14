@@ -172,3 +172,53 @@ function rotateArray(arr, k) {
     return arr.slice(-k).concat(arr.slice(0, n - k));
 }
 console.log(rotateArray([1, 2, 3, 4, 5], 2)); // [4, 5, 1, 2, 3]
+
+
+
+// Example of Array Destructuring
+const coordinates = [10, 20];
+const [x, y] = coordinates;
+console.log(`X: ${x}, Y: ${y}`); // X: 10, Y: 20
+
+// Swapping values using destructuring
+let a = 5;
+let b = 10;
+[a, b] = [b, a];
+console.log(`a: ${a}, b: ${b}`); // a: 10, b: 5
+
+// Example of Spread Operator with Arrays
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const combinedArray = [...arr1, ...arr2];
+console.log(combinedArray); // [1, 2, 3, 4, 5, 6]
+
+// Copying an array using spread operator
+const originalArray = [7, 8, 9];
+const copiedArray = [...originalArray];
+console.log(copiedArray); // [7, 8, 9]
+
+
+// Example of Rest Parameters with Arrays
+function sumAll(...numbers) {
+    return numbers.reduce((acc, curr) => acc + curr, 0);
+}
+console.log(sumAll(1, 2, 3, 4, 5)); // 15
+console.log(sumAll(10, 20)); // 30 
+
+
+// Example of Array.from()
+const str = "Hello";
+const charArray = Array.from(str);
+console.log(charArray); // ['H', 'e', 'l', 'l', 'o']
+
+// Converting a Set to an Array
+const mySet = new Set([1, 2, 3, 4]);
+const setToArray = Array.from(mySet);
+console.log(setToArray); // [1, 2, 3, 4]
+
+// Example of Array.of()
+const arrayOfNumbers = Array.of(1, 2, 3, 4, 5);
+console.log(arrayOfNumbers); // [1, 2, 3, 4, 5]
+
+const arrayOfStrings = Array.of("a", "b", "c");
+console.log(arrayOfStrings); // ['a', 'b', 'c']
