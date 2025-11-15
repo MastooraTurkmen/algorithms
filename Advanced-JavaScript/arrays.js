@@ -222,3 +222,34 @@ console.log(arrayOfNumbers); // [1, 2, 3, 4, 5]
 
 const arrayOfStrings = Array.of("a", "b", "c");
 console.log(arrayOfStrings); // ['a', 'b', 'c']
+
+
+// Example of Array.fill()
+const filledArray = new Array(5).fill(0);
+console.log(filledArray); // [0, 0, 0, 0, 0]
+
+const partialFillArray = [1, 2, 3, 4, 5].fill(9, 1, 4);
+console.log(partialFillArray); // [1, 9, 9, 9, 5]
+
+
+// Example of Array.includes()
+const numbersArray = [1, 2, 3, 4, 5];
+console.log(numbersArray.includes(3)); // true
+console.log(numbersArray.includes(6)); // false
+
+const stringArray = ["apple", "banana", "cherry"];
+console.log(stringArray.includes("banana")); // true
+console.log(stringArray.includes("grape")); // false
+
+// Example of Array.flat()
+const nestedArray = [1, [2, [3, [4]], 5]];
+const flattenedOnce = nestedArray.flat();
+console.log(flattenedOnce); // [1, 2, [3, [4]], 5]
+
+const fullyFlattened = nestedArray.flat(3);
+console.log(fullyFlattened); // [1, 2, 3, 4, 5]
+
+// Example of Array.flatMap()
+const words = ["hello world", "foo bar", "baz qux"];
+const flatMapped = words.flatMap(phrase => phrase.split(" "));
+console.log(flatMapped); // ['hello', 'world', 'foo', 'bar', 'baz', 'qux'] 
