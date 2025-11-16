@@ -253,3 +253,25 @@ console.log(fullyFlattened); // [1, 2, 3, 4, 5]
 const words = ["hello world", "foo bar", "baz qux"];
 const flatMapped = words.flatMap(phrase => phrase.split(" "));
 console.log(flatMapped); // ['hello', 'world', 'foo', 'bar', 'baz', 'qux'] 
+
+
+// Usage of array methods and advanced problems
+function randomMessage() {
+    const msg1 = ["Hello", "Hi", "Hey", "Greetings"];
+    const msg2 = ["World", "Everyone", "There", "Friend"];
+    const say1 = Math.floor(Math.random() * msg1.length);
+    const say2 = Math.floor(Math.random() * msg2.length);
+    return `${msg1[say1]} ${msg2[say2]}!`;
+}
+console.log(randomMessage());
+
+
+// Example of combining multiple array methods
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const processedNumbers = numbers
+    .filter(num => num % 2 === 0) // Keep only even numbers
+    .map(num => num * num)        // Square each number
+    .reduce((acc, curr) => acc + curr, 0); // Sum all squared numbers
+
+console.log(processedNumbers); // Output: 220 (4 + 16 + 36 + 64 + 100)
